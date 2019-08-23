@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProyectoPrueba.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ProyectoPruebaStoreContainer">
+    <EntitySet Name="EntrevistaSet" EntityType="ProyectoPrueba.Store.EntrevistaSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="EntrevistaSet">
+    <Key>
+      <PropertyRef Name="EntrevistaId" />
+    </Key>
+    <Property Name="EntrevistaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Apellido" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="DNI" Type="nvarchar" Nullable="false" MaxLength="9" />
+    <Property Name="Asiste" Type="smallint" Nullable="false" />
+    <Property Name="Valoracion" Type="smallint" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ProyectoPrueba" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ProyectoPruebaContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EntrevistaSet" EntityType="ProyectoPrueba.Entrevista" />
+        </EntityContainer>
+        <EntityType Name="Entrevista">
+          <Key>
+            <PropertyRef Name="EntrevistaId" />
+          </Key>
+          <Property Name="EntrevistaId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" cg:SetterAccess="Public" />
+          <Property Name="Apellido" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="DNI" Type="String" Nullable="false" MaxLength="9" />
+          <Property Name="Asiste" Type="Int16" Nullable="false" />
+          <Property Name="Valoracion" Type="Int16" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProyectoPruebaStoreContainer" CdmEntityContainer="ProyectoPruebaContainer">
+    <EntitySetMapping Name="EntrevistaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ProyectoPrueba.Entrevista)">
+        <MappingFragment StoreEntitySet="EntrevistaSet">
+          <ScalarProperty Name="EntrevistaId" ColumnName="EntrevistaId" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Asiste" ColumnName="Asiste" />
+          <ScalarProperty Name="Valoracion" ColumnName="Valoracion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
